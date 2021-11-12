@@ -17,7 +17,7 @@ class Book(models.Model):
 
 class Review(models.Model):
     """Describes the Review class"""
-    my_review = models.TextField()
+    text = models.TextField()
     stars = models.IntegerField()
     unfinished = models.BooleanField()
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
@@ -27,4 +27,4 @@ class Review(models.Model):
 
     def __str__(self):
         """Return a string representation of the review"""
-        return f"{self.my_review[:50]}..."
+        return f"{self.text[:50]}..."
